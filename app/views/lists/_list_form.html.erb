@@ -1,0 +1,23 @@
+<p>List Form partial</p>
+<ul>
+	<% @list.errors.full_messages.each do |error| %>
+		<li><%= error %></li>
+	<% end %>
+</ul>
+
+<%= form_for @list do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br />
+	<%= f.label :place %>
+	<%= f.select :place, ['United States', 'Canada', 'Italy', 'Brazil', 'Germany', 'Australia', 'New Zealand', 'Africa', 'Norway', 'United Kingdom', 'Thailand'] %>
+	<br /> 
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	<br />
+		<%= f.label :completed %>
+		<%= f.check_box :completed %>
+
+	<%= f.submit %>
+<% end %>
+
