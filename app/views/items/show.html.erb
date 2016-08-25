@@ -2,7 +2,7 @@ iv class="hero">
   <nav>
     <div class="nav-wrapper">
       <div class="col s12">
-        <a href= <%=lists_path %> class="breadcrumb">All tripps</a>
+        <a href= <%=lists_path %> class="breadcrumb">All items</a>
         <a href= <%=list_path(@list) %> class="breadcrumb">Second</a>
         <a href= <%=list_item_path %> class="breadcrumb">Third</a>
       </div>
@@ -18,14 +18,18 @@ iv class="hero">
 
 
 <div class="primary-footer">
-  <%= link_to 'Edit List', edit_list_item_path(@tripp, @list, @item), class:"waves-effect waves-light btn" %>
+  <%= link_to 'Edit List', edit_list_item_path(@list, @item), class:"waves-effect waves-light btn" %>
 <% else %>
-  <%= link_to 'Add item', new_tripp_location_address_path(@tripp, @location) %>
+  <%= link_to 'Add item', new_list_item_address_path(@list, @item) %>
 <% end %>
 
 | <%= link_to 'Edit item', edit_list_item_path(@list, @item), class:"waves-effect waves-light btn"  %> |
+
 <%= link_to 'Delete list', list_item_path(@list, @item), method: :delete, data: {confirm: 'Really Delete?'}, class:"waves-effect waves-light btn" %>
 <br />
-<%= link_to 'Back to list', list_path(@list), class:"waves-effect waves-light btn"  %> 
-</div>
-</div>
+<%= link_to 'Back to list', list_path(@list), class:"waves-effect waves-light btn"  %>
+</div> 
+
+
+
+

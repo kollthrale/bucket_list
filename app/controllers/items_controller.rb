@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-  	@item = @list.item.new(item_params)
+  	@item = @list.items.new(item_params)
   	if @item.save 
   		redirect_to list_path(@list)
   	else

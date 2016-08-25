@@ -1,4 +1,4 @@
-<h1>Lists index</h1>
+<h1 class="center-align indigo-text text-darken-4"">Bucket Lists index</h1>
 <% @lists.each do |list| %>
 	<%= list.title %>
 	<%= link_to "Show list", list_path(list), class:"waves-effect waves-light btn" %>
@@ -6,3 +6,29 @@
 <% end %>
 <hr />
 <%= link_to "Create List", new_list_path %>
+
+<div>
+	<% if @lists.any? %>
+	  <div class="row">
+			<% @lists.each do |list| %>
+	      <div class="col s12 m4">
+	        <div class="card">
+	          <div class="card-image">
+	            <img src="assets/images.jpg">
+	            <span class="card-title">
+								<%= link_to list.title, list_path(list) %>
+							</span>
+	          </div>
+	          <div class="card-content">
+	            <p>This is a beautiful destination where all your dreams come true. With Just the  selection of a button.</p>
+	          </div>
+	          <div class="card-action">
+	            <a href="#">see informations on the list.</a>
+	          </div>
+	        </div>
+	      </div>
+	      
+			<% end %>
+	  </div>
+	<% else %>
+	<% end %>
